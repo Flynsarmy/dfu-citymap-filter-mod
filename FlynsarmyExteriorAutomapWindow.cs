@@ -11,19 +11,8 @@
 
 using UnityEngine;
 using System;
-using System.Collections.Generic;
-using DaggerfallConnect.Arena2;
-using DaggerfallConnect.Utility;
-using DaggerfallWorkshop.Utility;
 using DaggerfallWorkshop.Game.UserInterface;
-using DaggerfallWorkshop.Game.Entity;
-using DaggerfallWorkshop.Game.Items;
-using DaggerfallWorkshop.Game.Utility;
-using DaggerfallWorkshop.Game.Questing;
-using DaggerfallWorkshop.Game.Banking;
 using System.Linq;
-using DaggerfallConnect;
-using DaggerfallWorkshop.Game.Formulas;
 
 
 namespace DaggerfallWorkshop.Game.UserInterfaceWindows
@@ -50,8 +39,9 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
         {
             base.Update();
 
-            if (localFilterTextBox.HasFocus() && (Input.GetKeyDown(KeyCode.Return)))
-                SetFocus(null);
+            //if (localFilterTextBox.HasFocus() && (Input.GetKeyDown(KeyCode.Return)))
+            //    SetFocus(null);
+            UpdateAutomapView();
         }
 
         protected void SetupTargetIconPanelFilterBox()
