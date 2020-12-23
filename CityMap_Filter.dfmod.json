@@ -1,0 +1,14 @@
+{
+    "ModTitle": "CityMap Filter",
+    "ModVersion": "0.2",
+    "ModAuthor": "Flyn San",
+    "ContactInfo": "flynsarmy@gmail.com",
+    "DFUnity_Version": "0.11.0",
+    "ModDescription": "Adds a simple text field for the city map screen that filters out guild/shop/tavern names as you type, making it easier to find your destination in large cities",
+    "GUID": "d8a8322d-d2c7-424e-b107-1f7864611277",
+    "Files": [
+        "Assets/Game/Mods/CityMap_Filter/CityMap_Filter.dfmod.json",
+        "Assets/Game/Mods/CityMap_Filter/FlynsarmyExteriorAutomapWindow.cs",
+        "Assets/Game/Mods/CityMap_Filter/FlynsarmyRegisterCityMapFilter.cs"
+    ]
+}
