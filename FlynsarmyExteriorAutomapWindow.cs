@@ -41,7 +41,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
             //if (localFilterTextBox.HasFocus() && (Input.GetKeyDown(KeyCode.Return)))
             //    SetFocus(null);
-            UpdateAutomapView();
+            FilterAutomapView();
         }
 
         protected void SetupTargetIconPanelFilterBox()
@@ -53,6 +53,8 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             localFilterTextBox.VerticalAlignment = VerticalAlignment.Bottom;
             localFilterTextBox.OnType += LocalFilterTextBox_OnType;
             localFilterTextBox.OverridesHotkeySequences = true;
+            localFilterTextBox.Enabled = true;
+            localFilterTextBox.SetFocus();
 
             // This button doesn't do anything. It just adds the appearance of a label beside
             // our text field
@@ -74,9 +76,13 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             base.OnPop();
         }
 
-        public new void UpdateAutomapView()
+        public void FilterAutomapView()
         {
-            base.UpdateAutomapView();
+            if (String.IsNullOrEmpty(filterString))
+            {
+                return;
+            }
+
             int hidden = 0;
             int count = PanelRenderAutomap.Components.Count();
 
@@ -94,9 +100,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
         protected bool NameplatePassesFilter(String nameplateText)
         {
-            if (String.IsNullOrEmpty(filterString))
-                return true;
-
             return nameplateText.IndexOf(filterString, StringComparison.OrdinalIgnoreCase) != -1;
         }
 
@@ -112,7 +115,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
 
             Debug.Log("CityMapFilter: Filtering to " + filterString);
 
-            UpdateAutomapView();
+            FilterAutomapView();
         }
     }
 }
