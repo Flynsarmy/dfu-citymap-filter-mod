@@ -69,6 +69,30 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             localFilterButton.BackgroundColor = new Color(0.5f, 0.5f, 0.5f, 0.75f);
         }
 
+        /// <summary>
+        /// called when automap window is pushed - resets automap settings to default settings and signals ExteriorAutomap class
+        /// </summary>
+        public override void OnPush()
+        {
+            // Save the current automap hotkey
+            KeyCode automapKeyCode = InputManager.Instance.GetBinding(InputManager.Actions.AutoMap);
+            Debug.Log("Keycode found: Setting to slash");
+            Debug.Log(automapKeyCode);
+            // Remove the binding
+            InputManager.Instance.SetBinding(KeyCode.Slash, InputManager.Actions.AutoMap);
+            InputManager.Instance.SaveKeyBinds();
+            Debug.Log("New Keycode found:");
+            Debug.Log(InputManager.Instance.GetBinding(InputManager.Actions.AutoMap));
+
+            // The base class saves teh current binding and uses it to hide the automap in
+            // Update() method.
+            base.OnPush();
+
+            // Return the binding to what it was set to by the user
+            InputManager.Instance.SetBinding(automapKeyCode, InputManager.Actions.AutoMap);
+            InputManager.Instance.SaveKeyBinds();
+        }
+
 
         public override void OnPop()
         {
