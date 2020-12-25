@@ -1,14 +1,3 @@
-// Project:         Daggerfall Tools For Unity
-// Copyright:       Copyright (C) 2009-2019 Daggerfall Workshop
-// Web Site:        http://www.dfworkshop.net
-// License:         MIT License (http://www.opensource.org/licenses/mit-license.php)
-// Source Code:     https://github.com/Interkarma/daggerfall-unity
-// Original Author: Gavin Clayton (interkarma@dfworkshop.net)
-// Contributors: InconsolableCellist, Hazelnut, Numidium
-// Extended:     Asesino, Pango
-// Notes:
-//
-
 using UnityEngine;
 using System;
 using DaggerfallWorkshop.Game.UserInterface;
@@ -39,8 +28,6 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
         {
             base.Update();
 
-            //if (localFilterTextBox.HasFocus() && (Input.GetKeyDown(KeyCode.Return)))
-            //    SetFocus(null);
             FilterAutomapView();
         }
 
@@ -49,7 +36,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             string toolTipText = string.Empty;
             toolTipText = "Press Filter Button to Open Filter Text Box.\rAnything typed into text box will autofilter.";
 
-            localFilterTextBox = DaggerfallUI.AddTextBoxWithFocus(new Rect(new Vector2(15, 24), new Vector2(47, 8)), "filter pattern", NativePanel);
+            localFilterTextBox = DaggerfallUI.AddTextBoxWithFocus(new Rect(new Vector2(15, 24), new Vector2(47, 8)), "", NativePanel);
             localFilterTextBox.VerticalAlignment = VerticalAlignment.Bottom;
             localFilterTextBox.OnType += LocalFilterTextBox_OnType;
             localFilterTextBox.OverridesHotkeySequences = true;
@@ -84,7 +71,7 @@ namespace DaggerfallWorkshop.Game.UserInterfaceWindows
             Debug.Log("New Keycode found:");
             Debug.Log(InputManager.Instance.GetBinding(InputManager.Actions.AutoMap));
 
-            // The base class saves teh current binding and uses it to hide the automap in
+            // Base class saves the current binding and uses it to hide the automap in
             // Update() method.
             base.OnPush();
 

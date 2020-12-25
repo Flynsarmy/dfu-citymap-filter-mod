@@ -1,12 +1,11 @@
 using UnityEngine;
-using System.Collections;
 using DaggerfallWorkshop.Game;
 using DaggerfallWorkshop.Game.Utility.ModSupport;
 using DaggerfallWorkshop.Game.UserInterfaceWindows;
 
-namespace FlynsarmyRegisterCityMapFilterMod
+namespace RegisterCityMapFilterMod
 {
-    public class FlynsarmyRegisterCityMapFilter : MonoBehaviour
+    public class RegisterCityMapFilter : MonoBehaviour
     {
         //this method will be called automatically by the modmanager after the main game scene is loaded.
         //The following requirements must be met to be invoked automatically by the ModManager during setup for this to happen:
@@ -17,7 +16,7 @@ namespace FlynsarmyRegisterCityMapFilterMod
         public static void Init(InitParams initParams)
         {
             GameObject go = new GameObject(initParams.ModTitle);
-            go.AddComponent<FlynsarmyRegisterCityMapFilter>();
+            go.AddComponent<RegisterCityMapFilter>();
 
             //after finishing, set the mod's IsReady flag to true.
             ModManager.Instance.GetMod(initParams.ModTitle).IsReady = true;
@@ -26,7 +25,7 @@ namespace FlynsarmyRegisterCityMapFilterMod
         void Awake()
         {
             UIWindowFactory.RegisterCustomUIWindow(UIWindowType.ExteriorAutomap, typeof(FlynsarmyExteriorAutomapWindow));
-            Debug.Log("CityMapFilter: Inventory registered windows");
+            Debug.Log("CityMapFilter: ExteriorAutomap registered windows");
         }
     }
 }

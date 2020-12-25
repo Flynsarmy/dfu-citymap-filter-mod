@@ -9,6 +9,6 @@
     "Files": [
         "Assets/Game/Mods/CityMap_Filter/CityMap_Filter.dfmod.json",
         "Assets/Game/Mods/CityMap_Filter/FlynsarmyExteriorAutomapWindow.cs",
-        "Assets/Game/Mods/CityMap_Filter/FlynsarmyRegisterCityMapFilter.cs"
+        "Assets/Game/Mods/CityMap_Filter/RegisterCityMapFilter.cs"
     ]
 }
