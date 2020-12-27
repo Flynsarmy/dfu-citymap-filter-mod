@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 926365988
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e0687bb6067659dcd450716563451d75
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Untracked/ModBuilder/CityMap Filter/FlynsarmyExteriorAutomapWindow.cs.txt
+- Assets/Game/Mods/CityMap_Filter/CityMap_Filter.dfmod.json
+- Assets/Untracked/ModBuilder/CityMap Filter/RegisterCityMapFilter.cs.txt
+Dependencies: []
